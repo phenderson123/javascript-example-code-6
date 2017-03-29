@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>jsexp</title>
+	<script>
+
+document.addEventListener("DOMContentLoaded", function(event) {
+
+  
+  var e = document.getElementById("jumpmenu");
+  
+  
+  e.addEventListener("change", function() {
+  
+      
+      selectedURL = this.options[this.options.selectedIndex].value;
+      
+      
+      if (this.value != "null") {
+      
+        
+        var confirmLeave = confirm("Sure Dude?");
+        
+        
+        if (confirmLeave==true) { 
+        
+          
+          document.location.href = selectedURL; 
+        }
+        
+        else { 
+          return false;
+        }
+      }     
+      
+  });
+  
+});
+</script>
+
+
+<form name="navForm" action="{action page}">
+  <select name="jumpmenu" id="jumpmenu">
+    <option>Jump to...</option>
+    <option value="http://">Space</option>
+    <option value="http://">New Website</option>
+    <option value="http://">another website</option>
+  </select>
+</form>
+</head>
+<body>
+
+</body>
+</html>
